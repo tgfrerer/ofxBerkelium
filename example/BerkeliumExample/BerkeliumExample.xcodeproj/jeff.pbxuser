@@ -1,0 +1,250 @@
+// !$*UTF8*$!
+{
+	1FE6A3A812E4D9BE005BA6D0 /* BerkeliumExample */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = BerkeliumExample;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	1FE6A3B312E4D9C2005BA6D0 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	1FE6A3B412E4D9C2005BA6D0 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1FE6A3C612E4D9F3005BA6D0 /* ofxBerkelium.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {894, 4693}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 917}";
+		};
+	};
+	1FE6A3C712E4D9F3005BA6D0 /* ofxBerkelium.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1608, 1300}}";
+			sepNavSelRange = "{298, 35}";
+			sepNavVisRange = "{0, 856}";
+		};
+	};
+	1FE6A3C912E4D9F3005BA6D0 /* ofxBerkeliumListener.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1370, 546}}";
+			sepNavSelRange = "{10, 9}";
+			sepNavVisRange = "{0, 1943}";
+		};
+	};
+	1FE6A3CA12E4D9F3005BA6D0 /* ofxBerkeliumUtil.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {707, 1092}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 850}";
+		};
+	};
+	1FE6A3FA12E4DB53005BA6D0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSUIElement,
+		);
+		name = "/Users/jeff/Documents/lensley-ofx/apps/test/BerkeliumExample/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	1FE6A3FB12E4DB53005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 914;
+		vrLoc = 58;
+	};
+	1FE6A3FC12E4DB53005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 0;
+	};
+	1FE6A3FD12E4DB53005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1FE6A3C612E4D9F3005BA6D0 /* ofxBerkelium.cpp */;
+		name = "ofxBerkelium.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 917;
+		vrLoc = 0;
+	};
+	1FE6A3FE12E4DB53005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1FE6A3C712E4D9F3005BA6D0 /* ofxBerkelium.h */;
+		name = "ofxBerkelium.h: 15";
+		rLen = 35;
+		rLoc = 298;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 0;
+	};
+	1FE6A3FF12E4DB53005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1FE6A3CA12E4D9F3005BA6D0 /* ofxBerkeliumUtil.h */;
+		name = "ofxBerkeliumUtil.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 850;
+		vrLoc = 0;
+	};
+	1FE6A40B12E4DC41005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1FE6A3C912E4D9F3005BA6D0 /* ofxBerkeliumListener.h */;
+		name = "ofxBerkeliumListener.h: 11";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 1940;
+		vrLoc = 3;
+	};
+	1FE6A41F12E4DC5C005BA6D0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1FE6A3C912E4D9F3005BA6D0 /* ofxBerkeliumListener.h */;
+		name = "ofxBerkeliumListener.h: 2";
+		rLen = 9;
+		rLoc = 10;
+		rType = 0;
+		vrLen = 1943;
+		vrLoc = 0;
+	};
+	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 1FE6A3A812E4D9BE005BA6D0 /* BerkeliumExample */;
+		activeTarget = E4B69B5A0A3A1756003C02F2 /* BerkeliumExample */;
+		addToTargets = (
+			E4B69B5A0A3A1756003C02F2 /* BerkeliumExample */,
+		);
+		codeSenseManager = 1FE6A3B412E4D9C2005BA6D0 /* Code sense */;
+		executables = (
+			1FE6A3A812E4D9BE005BA6D0 /* BerkeliumExample */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					641,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					601,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 316988491;
+			PBXWorkspaceStateSaveDate = 316988491;
+		};
+		perUserProjectItems = {
+			1FE6A3FA12E4DB53005BA6D0 /* PlistBookmark */ = 1FE6A3FA12E4DB53005BA6D0 /* PlistBookmark */;
+			1FE6A3FB12E4DB53005BA6D0 /* PBXTextBookmark */ = 1FE6A3FB12E4DB53005BA6D0 /* PBXTextBookmark */;
+			1FE6A3FC12E4DB53005BA6D0 /* PBXTextBookmark */ = 1FE6A3FC12E4DB53005BA6D0 /* PBXTextBookmark */;
+			1FE6A3FD12E4DB53005BA6D0 /* PBXTextBookmark */ = 1FE6A3FD12E4DB53005BA6D0 /* PBXTextBookmark */;
+			1FE6A3FE12E4DB53005BA6D0 /* PBXTextBookmark */ = 1FE6A3FE12E4DB53005BA6D0 /* PBXTextBookmark */;
+			1FE6A3FF12E4DB53005BA6D0 /* PBXTextBookmark */ = 1FE6A3FF12E4DB53005BA6D0 /* PBXTextBookmark */;
+			1FE6A40B12E4DC41005BA6D0 /* PBXTextBookmark */ = 1FE6A40B12E4DC41005BA6D0 /* PBXTextBookmark */;
+			1FE6A41F12E4DC5C005BA6D0 /* PBXTextBookmark */ = 1FE6A41F12E4DC5C005BA6D0 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 1FE6A3B312E4D9C2005BA6D0 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E4B69B5A0A3A1756003C02F2 /* BerkeliumExample */ = {
+		activeExec = 0;
+		executables = (
+			1FE6A3A812E4D9BE005BA6D0 /* BerkeliumExample */,
+		);
+	};
+	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {824, 3887}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 693}";
+		};
+	};
+	E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {707, 897}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{58, 914}";
+		};
+	};
+}
