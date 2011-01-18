@@ -56,18 +56,23 @@ void ofxBerkelium::clear() {
 void ofxBerkelium::draw(float x, float y, float w, float h) {
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, web_texture);
+	
+	
 	ofPushMatrix();
-	ofTranslate(x, y);
-	ofEnableNormalizedTexCoords();
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.f, 0.f); glVertex3f(0, 0, 0.f);
-	glTexCoord2f(0.f, 1.f); glVertex3f(0, h, 0.f);
-	glTexCoord2f(1.f, 1.f); glVertex3f(w,  h, 0.f);
-	glTexCoord2f(1.f, 0.f); glVertex3f(w, 0, 0.f);
-	glEnd();
-	ofDisableNormalizedTexCoords();
+		ofTranslate(x, y);
+		ofEnableNormalizedTexCoords();
+			glBegin(GL_QUADS);
+				glTexCoord2f(0.f, 0.f); glVertex3f(0, 0, 0.f);
+				glTexCoord2f(0.f, 1.f); glVertex3f(0, h, 0.f);
+				glTexCoord2f(1.f, 1.f); glVertex3f(w,  h, 0.f);
+				glTexCoord2f(1.f, 0.f); glVertex3f(w, 0, 0.f);
+			glEnd();
+		ofDisableNormalizedTexCoords();
 	ofPopMatrix();
+	
+	
 	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
 }
 
 //--------------------------------------------------------------
@@ -80,8 +85,49 @@ void ofxBerkelium::setListener( ofxBerkeliumListener* _listener ) {
 	listener = _listener;
 }
 
+//--------------------------------------------------------------
+void ofxBerkelium::keyboard(int key, bool pressed) {
+	
+    // Some keys that come through this are actually special keys, despite being
+    // represented as ASCII characters.
+    if (key == '\b' || key == '\r' || key == '\n' || key == ' ' || key == 127 ||
+        key >= 'a' && key <= 'z' || key >= 'A' && key <= 'Z') {
+        int wvmods = mapGLUTModsToBerkeliumMods(glutGetModifiers());
+        int vk_code = key == 127 ? BK_KEYCODE_DELETE : tolower(key);
+        int scancode = 0;
+		
+        bk_window->keyEvent(pressed, wvmods, vk_code, scancode);
+    }
+	
+
+	if (!isASCIISpecialToBerkelium(key) && !pressed) {
+        // Regular text can be sent via textEvent
+        wchar_t outchars[2];
+        outchars[0] = key;
+        outchars[1] = 0;
+        bk_window->textEvent(outchars,1);
+    }
+}
+
+//--------------------------------------------------------------
+void ofxBerkelium::mouseMoved(int x, int y ) {
+	
+	bk_window->mouseMoved(x, y);
+}
 
 
+//--------------------------------------------------------------
+void ofxBerkelium::mouseClick(int x, int y, int button, bool pressed ) {
+	if (button == GLUT_LEFT_BUTTON || button == GLUT_MIDDLE_BUTTON || button == GLUT_RIGHT_BUTTON) {
+        bk_window->mouseButton( button, pressed );
+    }
+    else if (button == 3) {
+        bk_window->mouseWheel(0, 20);
+    }
+    else if (button == 4) {
+        bk_window->mouseWheel(0, -20);
+    }
+}
 
 #pragma mark CALLBACKS
 

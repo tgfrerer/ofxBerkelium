@@ -46,67 +46,39 @@ void testApp::draw(){
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
 
-	int wvmods = mapGLUTModsToBerkeliumMods(glutGetModifiers());
-	int vk_code = mapGLUTKeyToBerkeliumKey(key);
-	int scancode = 0;
-	cout << "key: " << key << " wvmods: " << wvmods << " vk_code: " << vk_code << " scancode: " << scancode << endl;
-	browser->getWindow()->keyEvent(true, wvmods, vk_code, scancode);
-
-	
-	
-	wchar_t outchars[2] = {(wchar_t)key};
-	browser->getWindow()->textEvent(outchars, 1);
+	browser->keyboard(key, true);
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
 
-	int wvmods = mapGLUTModsToBerkeliumMods(glutGetModifiers());
-	int vk_code = mapGLUTKeyToBerkeliumKey(key);
-	int scancode = 0;
-	
-	browser->getWindow()->keyEvent(false, wvmods, vk_code, scancode);
+	browser->keyboard(key, false);
 
 }
 
 //--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y ){
 	
-	browser->window()->mouseMoved(x, y);
+	browser->mouseMoved(x, y);
 }
 
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
 
+	browser->mouseDragged(x, y, button);
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
 
-	if (button == GLUT_LEFT_BUTTON || button == GLUT_MIDDLE_BUTTON || button == GLUT_RIGHT_BUTTON) {
-        browser->window()->mouseButton( button, true );
-    }
-    else if (button == 3) {
-        browser->window()->mouseWheel(0, 20);
-    }
-    else if (button == 4) {
-        browser->window()->mouseWheel(0, -20);
-    }
+	browser->mouseClick(x, y, button, true);
 
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
 
-    if (button == GLUT_LEFT_BUTTON || button == GLUT_MIDDLE_BUTTON || button == GLUT_RIGHT_BUTTON) {
-        browser->window()->mouseButton( button, false );
-    }
-    else if (button == 3) {
-        browser->window()->mouseWheel(0, 20);
-    }
-    else if (button == 4) {
-       browser-> window()->mouseWheel(0, -20);
-    }
+   browser->mouseClick(x, y, button, false);
 }
 
 //--------------------------------------------------------------

@@ -7,6 +7,7 @@
  *
  */
 
+#pragma once
 
 /** Given modifiers retrieved from GLUT (e.g. glutGetModifiers), convert to a
  *  form that can be passed to Berkelium.

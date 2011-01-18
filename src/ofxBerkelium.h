@@ -13,6 +13,7 @@
 #include "berkelium/WindowDelegate.hpp"
 #include "berkelium/Context.hpp"
 #include "berkelium/ScriptUtil.hpp"
+#include "ofxBerkeliumUtil.h"
 #include "ofxBerkeliumListener.h"
 
 #define DEBUG_PAINT false
@@ -34,6 +35,9 @@ public:
 	void draw(float x, float y);
 	void draw(float x, float y, float w, float h);
 	
+	void keyboard(int key, bool pressed);
+	void mouseMoved(int x, int y );
+	void mouseClick(int x, int y, int button, bool pressed);
 
 #pragma mark CALLBACKS
     virtual void onPaint(Berkelium::Window* wini, const unsigned char* bitmap_in, const Berkelium::Rect& bitmap_rect, size_t num_copy_rects, const Berkelium::Rect* copy_rects, int dx, int dy, const Berkelium::Rect& scroll_rect);
@@ -80,6 +84,6 @@ private:
     bool needs_full_refresh;
     // Buffer used to store data for scrolling
     char* scroll_buffer;
-	
+	// The testApp (or some other delagate class) that receives events from the browser	
 	ofxBerkeliumListener* listener;
 };
