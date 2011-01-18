@@ -81,7 +81,7 @@ inline unsigned int mapGLUTKeyToBerkeliumKey(int glut_key) {
 /**
  *	FIXME:  I've been told this isn't portable
  */
-inline string wstring2string(wstring& ws) {
+inline string wstring2string(const wstring& ws) {
 	string ns(ws.begin(), ws.end());
     return  ns;
 }

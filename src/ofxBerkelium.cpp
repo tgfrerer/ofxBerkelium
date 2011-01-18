@@ -26,8 +26,13 @@ ofxBerkelium::ofxBerkelium(unsigned int _w, unsigned int _h, bool _usetrans) : w
 	bk_window->setDelegate(this);
 	bk_window->resize(width, height);
 	bk_window->setTransparent(_usetrans);
+	bk_window->focus();
+	clear();
 	
 	listener=NULL;
+	status = "";
+	title = "";
+	addressBar="";
 }
 
 //--------------------------------------------------------------
@@ -35,6 +40,7 @@ ofxBerkelium::~ofxBerkelium() {
 	delete scroll_buffer;
 	delete bk_window;
 }
+
 
 //--------------------------------------------------------------
 Berkelium::Window* ofxBerkelium::getWindow() {
@@ -57,7 +63,6 @@ void ofxBerkelium::draw(float x, float y, float w, float h) {
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, web_texture);
 	
-	
 	ofPushMatrix();
 		ofTranslate(x, y);
 		ofEnableNormalizedTexCoords();
@@ -69,7 +74,6 @@ void ofxBerkelium::draw(float x, float y, float w, float h) {
 			glEnd();
 		ofDisableNormalizedTexCoords();
 	ofPopMatrix();
-	
 	
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glDisable(GL_TEXTURE_2D);
@@ -92,10 +96,22 @@ void ofxBerkelium::keyboard(int key, bool pressed) {
     // represented as ASCII characters.
     if (key == '\b' || key == '\r' || key == '\n' || key == ' ' || key == 127 ||
         key >= 'a' && key <= 'z' || key >= 'A' && key <= 'Z') {
-        int wvmods = mapGLUTModsToBerkeliumMods(glutGetModifiers());
-        int vk_code = key == 127 ? BK_KEYCODE_DELETE : tolower(key);
-        int scancode = 0;
+        
+		// a modifier code created by a logical or of KeyModifiers
+		int wvmods = mapGLUTModsToBerkeliumMods( glutGetModifiers() );
 		
+		// the virtual key code received from the OS
+		int vk_code = tolower(key);
+
+		// Delete key is mapped wrong for some reason (on Mac -- not sure about other platforms)
+		if(key == 127) {
+			vk_code = 8;						// HACK -- 
+		} else {
+			tolower(key);
+		}
+		
+		// the original scancode that generated the event
+        int scancode = 0;
         bk_window->keyEvent(pressed, wvmods, vk_code, scancode);
     }
 	
@@ -148,6 +164,7 @@ void ofxBerkelium::onPaint(Berkelium::Window* wini,
 }
 
 void ofxBerkelium::onAddressBarChanged(Berkelium::Window *win, Berkelium::URLString newURL) {
+	addressBar = newURL.data();
 	if(listener) listener->onAddressBarChanged(newURL.data());
 }
 void ofxBerkelium::onStartLoading(Berkelium::Window *win, Berkelium::URLString newURL) {
@@ -168,52 +185,58 @@ void ofxBerkelium::onProvisionalLoadError(Berkelium::Window *win, Berkelium::URL
 }
 void ofxBerkelium::onConsoleMessage(Berkelium::Window *win, Berkelium::WideString message,
 							  Berkelium::WideString sourceId, int line_no) {
+	status = wstring2string(message.data());
 	if(listener) listener->onConsoleMessage(message.data(), sourceId.data(), line_no);
 }
 void ofxBerkelium::onScriptAlert(Berkelium::Window *win, Berkelium::WideString message,
 						   Berkelium::WideString defaultValue, Berkelium::URLString url,
 						   int flags, bool &success, Berkelium::WideString &value) {
+	status = wstring2string( message.data() );
 	if(listener) listener->onScriptAlert(message.data(), defaultValue.data(), url.data(), 
 										 flags, success, value.data());
 }
 void ofxBerkelium::onNavigationRequested(Berkelium::Window *win, Berkelium::URLString newURL,
 								   Berkelium::URLString referrer, bool isNewWindow,
 								   bool &cancelDefaultAction) {
+	status = "Navigating to "+string(newURL.data());
 	if(listener) listener->onNavigationRequested(newURL.data(), referrer.data(), isNewWindow, cancelDefaultAction);
 }
 void ofxBerkelium::onLoadingStateChanged(Berkelium::Window *win, bool isLoading) {
+	status = (isLoading) ? "Loading"+string( ofGetFrameNum()%5, '.' ) : "";
 	if(listener) listener->onLoadingStateChanged(isLoading);
 }
-void ofxBerkelium::onTitleChanged(Berkelium::Window *win, Berkelium::WideString title) {
-	if(listener) listener->onTitleChanged(title.data());
+void ofxBerkelium::onTitleChanged(Berkelium::Window *win, Berkelium::WideString _title) {
+	title = wstring2string( _title.data() );
+	if(listener) listener->onTitleChanged(_title.data());
 }
 void ofxBerkelium::onTooltipChanged(Berkelium::Window *win, Berkelium::WideString text) {
+	status = wstring2string( text.data() );
 	if(listener) listener->onTooltipChanged(text.data());
 }
 void ofxBerkelium::onCrashed(Berkelium::Window *win) {
 	if(listener) listener->onCrashed();
 }
 void ofxBerkelium::onUnresponsive(Berkelium::Window *win) {
+	status = "unresponsive";
 	if(listener) listener->onUnresponsive();
 }
 void ofxBerkelium::onResponsive(Berkelium::Window *win) {
+	status = "";
 	if(listener) listener->onResponsive();
 }
 void ofxBerkelium::onCreatedWindow(Berkelium::Window *win, Berkelium::Window *newWindow, const Berkelium::Rect &initialRect) {
-	std::cout << "*** onCreatedWindow "
+	cout << "*** onCreatedWindow "
 	<< initialRect.mLeft << "," << initialRect.mTop << ": "
-	<< initialRect.mWidth << "x" << initialRect.mHeight << std::endl;
+	<< initialRect.mWidth << "x" << initialRect.mHeight << endl;
 }
 void ofxBerkelium::onWidgetCreated(Berkelium::Window *win, Berkelium::Widget *newWidget, int zIndex) {
 	std::cout << "*** onWidgetCreated " << newWidget << " index " << zIndex << std::endl;
 }
 void ofxBerkelium::onWidgetResize(Berkelium::Window *win, Berkelium::Widget *wid, int newWidth, int newHeight) {
-	std::cout << "*** onWidgetResize " << wid << " "
-	<< newWidth << "x" << newHeight << std::endl;
+	cout << "*** onWidgetResize " << wid << " " << newWidth << "x" << newHeight << endl;
 }
 void ofxBerkelium::onWidgetMove(Berkelium::Window *win, Berkelium::Widget *wid, int newX, int newY) {
-	std::cout << "*** onWidgetMove " << wid << " "
-	<< newX << "," << newY << std::endl;
+	cout << "*** onWidgetMove " << wid << " " << newX << "," << newY << endl;
 }
 void ofxBerkelium::onShowContextMenu(Berkelium::Window *win,
 							   const Berkelium::ContextMenuEventArgs& args) {

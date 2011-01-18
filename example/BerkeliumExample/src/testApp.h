@@ -16,6 +16,13 @@
 // check out the Window documentation for all of the stuff a Window can do
 // http://berkelium.org/class_berkelium_1_1_window.html
 
+typedef struct particle {
+	ofPoint pos;
+	ofPoint rot;
+	ofPoint vel;
+	float scale;
+};
+
 class testApp : public ofBaseApp, ofxBerkeliumListener {
 
 	public:
@@ -51,8 +58,14 @@ class testApp : public ofBaseApp, ofxBerkeliumListener {
 		void onRunFileChooser(int mode, wstring title, string defaultFile);
 		void onExternalHost(wstring message, string origin, string target);
 	
-		ofxBerkelium* browser;
-		float angle;
+		ofxBerkelium* browser;	
+		vector<string> urls;
+		bool loadRandomURL;
+		bool drawLog;
+	
+		vector<particle> particles;
+	
+		vector<string> log;
 };
 
 #endif

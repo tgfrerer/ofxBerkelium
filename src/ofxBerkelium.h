@@ -39,31 +39,48 @@ public:
 	void mouseMoved(int x, int y );
 	void mouseClick(int x, int y, int button, bool pressed);
 
+	unsigned char* getPixels() {
+		// TO DO:  Implement this, preferably without getting the pixels out of the texture (too slow?)
+	}
+	
+	void back() {
+		bk_window->goBack();
+	}
+	
+	void forward() {
+		bk_window->goForward();
+	}
+	
+	string status;
+	string title;
+	string addressBar;
+	
 #pragma mark CALLBACKS
-    virtual void onPaint(Berkelium::Window* wini, const unsigned char* bitmap_in, const Berkelium::Rect& bitmap_rect, size_t num_copy_rects, const Berkelium::Rect* copy_rects, int dx, int dy, const Berkelium::Rect& scroll_rect);
-    virtual void onAddressBarChanged(Berkelium::Window *win, Berkelium::URLString newURL);
-    virtual void onStartLoading(Berkelium::Window *win, Berkelium::URLString newURL);
-    virtual void onLoad(Berkelium::Window *win);
-    virtual void onCrashedWorker(Berkelium::Window *win);
-    virtual void onCrashedPlugin(Berkelium::Window *win, Berkelium::WideString pluginName);
-    virtual void onProvisionalLoadError(Berkelium::Window *win, Berkelium::URLString url, int errorCode, bool isMainFrame);
-    virtual void onConsoleMessage(Berkelium::Window *win, Berkelium::WideString message, Berkelium::WideString sourceId, int line_no);
-    virtual void onScriptAlert(Berkelium::Window *win, Berkelium::WideString message, Berkelium::WideString defaultValue, Berkelium::URLString url, int flags, bool &success, Berkelium::WideString &value);
-    virtual void onNavigationRequested(Berkelium::Window *win, Berkelium::URLString newURL, Berkelium::URLString referrer, bool isNewWindow, bool &cancelDefaultAction);
-    virtual void onLoadingStateChanged(Berkelium::Window *win, bool isLoading);
-    virtual void onTitleChanged(Berkelium::Window *win, Berkelium::WideString title);
-    virtual void onTooltipChanged(Berkelium::Window *win, Berkelium::WideString text);
-    virtual void onCrashed(Berkelium::Window *win);
-    virtual void onUnresponsive(Berkelium::Window *win);
-    virtual void onResponsive(Berkelium::Window *win);
-    virtual void onCreatedWindow(Berkelium::Window *win, Berkelium::Window *newWindow, const Berkelium::Rect &initialRect);
-    virtual void onWidgetCreated(Berkelium::Window *win, Berkelium::Widget *newWidget, int zIndex);
-    virtual void onWidgetResize(Berkelium::Window *win, Berkelium::Widget *wid, int newWidth, int newHeight);
-    virtual void onWidgetMove(Berkelium::Window *win, Berkelium::Widget *wid, int newX, int newY);
-    virtual void onShowContextMenu(Berkelium::Window *win, const Berkelium::ContextMenuEventArgs& args) ;
-    virtual void onJavascriptCallback(Berkelium::Window *win, void* replyMsg, Berkelium::URLString url, Berkelium::WideString funcName, Berkelium::Script::Variant *args, size_t numArgs);
-    virtual void onRunFileChooser(Berkelium::Window *win, int mode, Berkelium::WideString title, Berkelium::FileString defaultFile);
-    virtual void onExternalHost(Berkelium::Window *win, Berkelium::WideString message, Berkelium::URLString origin, Berkelium::URLString target);
+	
+	void onPaint(Berkelium::Window* wini, const unsigned char* bitmap_in, const Berkelium::Rect& bitmap_rect, size_t num_copy_rects, const Berkelium::Rect* copy_rects, int dx, int dy, const Berkelium::Rect& scroll_rect);
+    void onAddressBarChanged(Berkelium::Window *win, Berkelium::URLString newURL);
+    void onStartLoading(Berkelium::Window *win, Berkelium::URLString newURL);
+    void onLoad(Berkelium::Window *win);
+    void onCrashedWorker(Berkelium::Window *win);
+    void onCrashedPlugin(Berkelium::Window *win, Berkelium::WideString pluginName);
+    void onProvisionalLoadError(Berkelium::Window *win, Berkelium::URLString url, int errorCode, bool isMainFrame);
+    void onConsoleMessage(Berkelium::Window *win, Berkelium::WideString message, Berkelium::WideString sourceId, int line_no);
+    void onScriptAlert(Berkelium::Window *win, Berkelium::WideString message, Berkelium::WideString defaultValue, Berkelium::URLString url, int flags, bool &success, Berkelium::WideString &value);
+    void onNavigationRequested(Berkelium::Window *win, Berkelium::URLString newURL, Berkelium::URLString referrer, bool isNewWindow, bool &cancelDefaultAction);
+    void onLoadingStateChanged(Berkelium::Window *win, bool isLoading);
+    void onTitleChanged(Berkelium::Window *win, Berkelium::WideString title);
+    void onTooltipChanged(Berkelium::Window *win, Berkelium::WideString text);
+    void onCrashed(Berkelium::Window *win);
+    void onUnresponsive(Berkelium::Window *win);
+    void onResponsive(Berkelium::Window *win);
+    void onCreatedWindow(Berkelium::Window *win, Berkelium::Window *newWindow, const Berkelium::Rect &initialRect);
+    void onWidgetCreated(Berkelium::Window *win, Berkelium::Widget *newWidget, int zIndex);
+    void onWidgetResize(Berkelium::Window *win, Berkelium::Widget *wid, int newWidth, int newHeight);
+    void onWidgetMove(Berkelium::Window *win, Berkelium::Widget *wid, int newX, int newY);
+    void onShowContextMenu(Berkelium::Window *win, const Berkelium::ContextMenuEventArgs& args) ;
+    void onJavascriptCallback(Berkelium::Window *win, void* replyMsg, Berkelium::URLString url, Berkelium::WideString funcName, Berkelium::Script::Variant *args, size_t numArgs);
+    void onRunFileChooser(Berkelium::Window *win, int mode, Berkelium::WideString title, Berkelium::FileString defaultFile);
+    void onExternalHost(Berkelium::Window *win, Berkelium::WideString message, Berkelium::URLString origin, Berkelium::URLString target);
 
 	
 private:
@@ -86,4 +103,5 @@ private:
     char* scroll_buffer;
 	// The testApp (or some other delagate class) that receives events from the browser	
 	ofxBerkeliumListener* listener;
+
 };
