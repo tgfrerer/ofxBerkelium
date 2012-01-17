@@ -9,6 +9,18 @@
 
 #pragma once
 
+#ifdef TARGET_WIN32
+	#define GLUT_BUILDING_LIB
+	#include "glut.h"
+#endif
+#ifdef TARGET_OSX
+	#include "../../../libs/glut/lib/osx/GLUT.framework/Versions/A/Headers/glut.h"
+	#include <Carbon/Carbon.h>
+#endif
+#ifdef TARGET_LINUX
+	#include <GL/glut.h>
+#endif
+
 /** Given modifiers retrieved from GLUT (e.g. glutGetModifiers), convert to a
  *  form that can be passed to Berkelium.
  */
