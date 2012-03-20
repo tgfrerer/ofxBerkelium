@@ -112,9 +112,9 @@ void testApp::draw(){
 	if(browser->status=="") {
 		browser->status = "Press right key to load another URL";
 	}
-	ofSetColor(0x000000);
+	ofSetColor(0);
 	ofRect(0, ofGetHeight()-25, ofGetWidth(), 25);
-	ofSetColor(0xFFFFFF);
+	ofSetColor(255);
 	ofDrawBitmapString(browser->status, 10, ofGetHeight()-7);
 	ofPopStyle();
 	
