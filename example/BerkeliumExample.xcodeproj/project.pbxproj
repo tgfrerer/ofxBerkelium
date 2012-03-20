@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27BB7C181489D25C00640041 /* libplugin_carbon_interpose.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB7BFF1489D25C00640041 /* libplugin_carbon_interpose.dylib */; };
-		27BB7C1A1489D25C00640041 /* liblibberkelium.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB7C111489D25C00640041 /* liblibberkelium.dylib */; };
+		223737711518AF5500560273 /* liblibberkelium.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237376E1518AF5400560273 /* liblibberkelium.dylib */; };
 		27BB7C1B1489D25C00640041 /* ofxBerkelium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27BB7C141489D25C00640041 /* ofxBerkelium.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
-		E4328149138ABC9F0047C5CB /* openFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworks.a */; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
 		E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */; };
@@ -60,22 +59,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		27BB7BFE1489D25C00640041 /* berkelium */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = berkelium; path = ../../../addons/ofxBerkelium/lib/bin/berkelium; sourceTree = SOURCE_ROOT; };
-		27BB7BFF1489D25C00640041 /* libplugin_carbon_interpose.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libplugin_carbon_interpose.dylib; path = ../../../addons/ofxBerkelium/lib/bin/libplugin_carbon_interpose.dylib; sourceTree = SOURCE_ROOT; };
-		27BB7C021489D25C00640041 /* Berkelium.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Berkelium.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Berkelium.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C031489D25C00640041 /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Context.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Context.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C041489D25C00640041 /* Cursor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cursor.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Cursor.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C051489D25C00640041 /* Platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Platform.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Platform.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C061489D25C00640041 /* Rect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Rect.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Rect.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C071489D25C00640041 /* ScriptUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScriptUtil.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/ScriptUtil.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C081489D25C00640041 /* ScriptVariant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScriptVariant.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/ScriptVariant.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C091489D25C00640041 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Singleton.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C0A1489D25C00640041 /* StringUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = StringUtil.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/StringUtil.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C0B1489D25C00640041 /* WeakString.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = WeakString.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/WeakString.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C0C1489D25C00640041 /* Widget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Widget.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Widget.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C0D1489D25C00640041 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Window.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/Window.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C0E1489D25C00640041 /* WindowDelegate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = WindowDelegate.hpp; path = ../../../addons/ofxBerkelium/lib/include/berkelium/WindowDelegate.hpp; sourceTree = SOURCE_ROOT; };
-		27BB7C111489D25C00640041 /* liblibberkelium.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblibberkelium.dylib; path = ../../../addons/ofxBerkelium/lib/lib/liblibberkelium.dylib; sourceTree = SOURCE_ROOT; };
+		223737571518AF5400560273 /* berkelium */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = berkelium; sourceTree = "<group>"; };
+		223737581518AF5400560273 /* libplugin_carbon_interpose.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libplugin_carbon_interpose.dylib; sourceTree = "<group>"; };
+		2237375B1518AF5400560273 /* Berkelium.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Berkelium.hpp; sourceTree = "<group>"; };
+		2237375C1518AF5400560273 /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
+		2237375D1518AF5400560273 /* Cursor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cursor.hpp; sourceTree = "<group>"; };
+		2237375E1518AF5400560273 /* Platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Platform.hpp; sourceTree = "<group>"; };
+		2237375F1518AF5400560273 /* Rect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rect.hpp; sourceTree = "<group>"; };
+		223737601518AF5400560273 /* ScriptUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ScriptUtil.hpp; sourceTree = "<group>"; };
+		223737611518AF5400560273 /* ScriptVariant.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ScriptVariant.hpp; sourceTree = "<group>"; };
+		223737621518AF5400560273 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
+		223737631518AF5400560273 /* StringUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StringUtil.hpp; sourceTree = "<group>"; };
+		223737641518AF5400560273 /* WeakString.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WeakString.hpp; sourceTree = "<group>"; };
+		223737651518AF5400560273 /* Widget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Widget.hpp; sourceTree = "<group>"; };
+		223737661518AF5400560273 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		223737671518AF5400560273 /* WindowDelegate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowDelegate.hpp; sourceTree = "<group>"; };
+		2237376E1518AF5400560273 /* liblibberkelium.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liblibberkelium.dylib; sourceTree = "<group>"; };
 		27BB7C141489D25C00640041 /* ofxBerkelium.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxBerkelium.cpp; path = ../../../addons/ofxBerkelium/src/ofxBerkelium.cpp; sourceTree = SOURCE_ROOT; };
 		27BB7C151489D25C00640041 /* ofxBerkelium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxBerkelium.h; path = ../../../addons/ofxBerkelium/src/ofxBerkelium.h; sourceTree = SOURCE_ROOT; };
 		27BB7C161489D25C00640041 /* ofxBerkeliumListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxBerkeliumListener.h; path = ../../../addons/ofxBerkelium/src/ofxBerkeliumListener.h; sourceTree = SOURCE_ROOT; };
@@ -91,7 +90,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* BerkeliumExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BerkeliumExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* BerkeliumExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BerkeliumExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
@@ -109,7 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
-				E4328149138ABC9F0047C5CB /* openFrameworks.a in Frameworks */,
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -122,82 +121,92 @@
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
-				27BB7C181489D25C00640041 /* libplugin_carbon_interpose.dylib in Frameworks */,
-				27BB7C1A1489D25C00640041 /* liblibberkelium.dylib in Frameworks */,
+				223737711518AF5500560273 /* liblibberkelium.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223737541518AF5400560273 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				223737551518AF5400560273 /* berkelium */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		223737551518AF5400560273 /* berkelium */ = {
+			isa = PBXGroup;
+			children = (
+				223737561518AF5400560273 /* bin */,
+				223737591518AF5400560273 /* include */,
+				223737681518AF5400560273 /* lib */,
+			);
+			path = berkelium;
+			sourceTree = "<group>";
+		};
+		223737561518AF5400560273 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				223737571518AF5400560273 /* berkelium */,
+				223737581518AF5400560273 /* libplugin_carbon_interpose.dylib */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		223737591518AF5400560273 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2237375A1518AF5400560273 /* berkelium */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2237375A1518AF5400560273 /* berkelium */ = {
+			isa = PBXGroup;
+			children = (
+				2237375B1518AF5400560273 /* Berkelium.hpp */,
+				2237375C1518AF5400560273 /* Context.hpp */,
+				2237375D1518AF5400560273 /* Cursor.hpp */,
+				2237375E1518AF5400560273 /* Platform.hpp */,
+				2237375F1518AF5400560273 /* Rect.hpp */,
+				223737601518AF5400560273 /* ScriptUtil.hpp */,
+				223737611518AF5400560273 /* ScriptVariant.hpp */,
+				223737621518AF5400560273 /* Singleton.hpp */,
+				223737631518AF5400560273 /* StringUtil.hpp */,
+				223737641518AF5400560273 /* WeakString.hpp */,
+				223737651518AF5400560273 /* Widget.hpp */,
+				223737661518AF5400560273 /* Window.hpp */,
+				223737671518AF5400560273 /* WindowDelegate.hpp */,
+			);
+			path = berkelium;
+			sourceTree = "<group>";
+		};
+		223737681518AF5400560273 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2237376C1518AF5400560273 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		2237376C1518AF5400560273 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				2237376E1518AF5400560273 /* liblibberkelium.dylib */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
 		27BB7BD61489D25C00640041 /* ofxBerkelium */ = {
 			isa = PBXGroup;
 			children = (
-				27BB7BFC1489D25C00640041 /* lib */,
+				223737541518AF5400560273 /* libs */,
 				27BB7C131489D25C00640041 /* src */,
 			);
 			name = ofxBerkelium;
 			path = ../../../addons/ofxBerkelium;
-			sourceTree = SOURCE_ROOT;
-		};
-		27BB7BFC1489D25C00640041 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				27BB7BFD1489D25C00640041 /* bin */,
-				27BB7C001489D25C00640041 /* include */,
-				27BB7C0F1489D25C00640041 /* lib */,
-			);
-			name = lib;
-			path = ../../../addons/ofxBerkelium/lib;
-			sourceTree = SOURCE_ROOT;
-		};
-		27BB7BFD1489D25C00640041 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				27BB7BFE1489D25C00640041 /* berkelium */,
-				27BB7BFF1489D25C00640041 /* libplugin_carbon_interpose.dylib */,
-			);
-			name = bin;
-			path = ../../../addons/ofxBerkelium/lib/bin;
-			sourceTree = SOURCE_ROOT;
-		};
-		27BB7C001489D25C00640041 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				27BB7C011489D25C00640041 /* berkelium */,
-			);
-			name = include;
-			path = ../../../addons/ofxBerkelium/lib/include;
-			sourceTree = SOURCE_ROOT;
-		};
-		27BB7C011489D25C00640041 /* berkelium */ = {
-			isa = PBXGroup;
-			children = (
-				27BB7C021489D25C00640041 /* Berkelium.hpp */,
-				27BB7C031489D25C00640041 /* Context.hpp */,
-				27BB7C041489D25C00640041 /* Cursor.hpp */,
-				27BB7C051489D25C00640041 /* Platform.hpp */,
-				27BB7C061489D25C00640041 /* Rect.hpp */,
-				27BB7C071489D25C00640041 /* ScriptUtil.hpp */,
-				27BB7C081489D25C00640041 /* ScriptVariant.hpp */,
-				27BB7C091489D25C00640041 /* Singleton.hpp */,
-				27BB7C0A1489D25C00640041 /* StringUtil.hpp */,
-				27BB7C0B1489D25C00640041 /* WeakString.hpp */,
-				27BB7C0C1489D25C00640041 /* Widget.hpp */,
-				27BB7C0D1489D25C00640041 /* Window.hpp */,
-				27BB7C0E1489D25C00640041 /* WindowDelegate.hpp */,
-			);
-			name = berkelium;
-			path = ../../../addons/ofxBerkelium/lib/include/berkelium;
-			sourceTree = SOURCE_ROOT;
-		};
-		27BB7C0F1489D25C00640041 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				27BB7C111489D25C00640041 /* liblibberkelium.dylib */,
-			);
-			name = lib;
-			path = ../../../addons/ofxBerkelium/lib/lib;
 			sourceTree = SOURCE_ROOT;
 		};
 		27BB7C131489D25C00640041 /* src */ = {
@@ -250,7 +259,7 @@
 		E4328144138ABC890047C5CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4328148138ABC890047C5CB /* openFrameworks.a */,
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,7 +282,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
-				E4B69B5B0A3A1756003C02F2 /* BerkeliumExample.app */,
+				E4B69B5B0A3A1756003C02F2 /* BerkeliumExampleDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,7 +324,7 @@
 			);
 			name = BerkeliumExample;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* BerkeliumExample.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* BerkeliumExampleDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -325,6 +334,7 @@
 			isa = PBXProject;
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "BerkeliumExample" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
@@ -349,10 +359,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E4328148138ABC890047C5CB /* openFrameworks.a */ = {
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = openFrameworks.a;
+			path = openFrameworksDebug.a;
 			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -370,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\n\ncp ../../../addons/ofxBerkelium/lib/lib/liblibberkelium.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp ../../../addons/ofxBerkelium/lib/bin/libplugin_carbon_interpose.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp ../../../addons/ofxBerkelium/lib/bin/berkelium \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/\" \ncp -r ../../../addons/ofxBerkelium/lib/lib/Chromium\\ Framework.framework \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp ../../../addons/ofxBerkelium/lib/bin/libplugin_carbon_interpose.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\" ";
+			shellScript = "cp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\n\n# mkdir \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp    ../../../addons/ofxBerkelium/libs/berkelium/lib/osx/liblibberkelium.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp -r ../../../addons/ofxBerkelium/libs/berkelium/lib/osx/Chromium\\ Framework.framework \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp ../../../addons/ofxBerkelium/libs/berkelium/bin/libplugin_carbon_interpose.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/lib/\"\ncp ../../../addons/ofxBerkelium/libs/berkelium/bin/berkelium \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/\" \n# cp ../../../addons/ofxBerkelium/libs/berkelium/bin/libplugin_carbon_interpose.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/\" ";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -460,9 +470,11 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/lib/lib\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/libs/berkelium/lib/osx\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(DEVELOPER_DIR)/dev/openFrameworks/addons/ofxBerkelium/libs/berkelium/lib/osx\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -536,9 +548,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/lib/bin\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/lib/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/libs/berkelium/bin\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/libs/berkelium/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(DEVELOPER_DIR)/dev/openFrameworks/addons/ofxBerkelium/libs/berkelium/bin\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(DEVELOPER_DIR)/dev/openFrameworks/addons/ofxBerkelium/libs/berkelium/lib/osx\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -553,9 +569,11 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/lib/lib\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/libs/berkelium/lib/osx\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(DEVELOPER_DIR)/dev/openFrameworks/addons/ofxBerkelium/libs/berkelium/lib/osx\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G4;
@@ -628,9 +646,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/lib/bin\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/lib/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/libs/berkelium/bin\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxBerkelium/libs/berkelium/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(DEVELOPER_DIR)/dev/openFrameworks/addons/ofxBerkelium/libs/berkelium/bin\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(DEVELOPER_DIR)/dev/openFrameworks/addons/ofxBerkelium/libs/berkelium/lib/osx\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
