@@ -48,7 +48,7 @@ inline unsigned int isASCIISpecialToBerkelium(unsigned int glut_char) {
     unsigned char ASCII_TAB       = 9;
     unsigned char ASCII_ESCAPE    = 27;
     unsigned char ASCII_DELETE    = 127;
-	
+
     return (glut_char == ASCII_BACKSPACE ||
 			glut_char == ASCII_TAB ||
 			glut_char == ASCII_ESCAPE ||
@@ -68,7 +68,7 @@ enum VirtKeys {
 	BK_KEYCODE_DOWN = 0x28,
 	BK_KEYCODE_INSERT = 0x2D,
 	BK_KEYCODE_DELETE = 0x2E
-	
+
 };
 
 /** Given an input key from GLUT, convert it to a form that can be passed to
@@ -96,4 +96,79 @@ inline unsigned int mapGLUTKeyToBerkeliumKey(int glut_key) {
 inline string wstring2string(const wstring& ws) {
 	string ns(ws.begin(), ws.end());
     return  ns;
+}
+
+
+/** tig: The follwing string2wstring method is based on:
+ *       <http://altctrlbackspace.blogspot.com/2009/03/c-utf8-to-wstring-conversion-routine.html>
+ *
+ *  Copyright (c) 2009 SegFault aka "ErV" (altctrlbackspace.blogspot.com)
+ *
+ *  Redistribution and use of this source code, with or without modification, is
+ *  permitted provided that the following conditions are met:
+ *
+ *  1. Redistributions of source code must retain the above copyright
+ *   notice, this list of conditions and the following disclaimer.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ *  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ *  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+ *  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ *  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ *  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ *  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+inline std::wstring string2wstring(const string& src){
+     wstring dest;
+
+     dest.clear();
+     wchar_t w = 0;
+     int bytes = 0;
+     wchar_t err = L'?';
+     for (size_t i = 0; i < src.size(); i++){
+      unsigned char c = (unsigned char)src[i];
+      if (c <= 0x7f){//first byte
+       if (bytes){
+        dest.push_back(err);
+        bytes = 0;
+       }
+       dest.push_back((wchar_t)c);
+      }
+      else if (c <= 0xbf){//second/third/etc byte
+       if (bytes){
+        w = ((w << 6)|(c & 0x3f));
+        bytes--;
+        if (bytes == 0)
+         dest.push_back(w);
+       }
+       else
+        dest.push_back(err);
+      }
+      else if (c <= 0xdf){//2byte sequence start
+       bytes = 1;
+       w = c & 0x1f;
+      }
+      else if (c <= 0xef){//3byte sequence start
+       bytes = 2;
+       w = c & 0x0f;
+      }
+      else if (c <= 0xf7){//3byte sequence start
+       bytes = 3;
+       w = c & 0x07;
+      }
+      else{
+       dest.push_back(err);
+       bytes = 0;
+      }
+     }
+     if (bytes)
+      dest.push_back(err);
+
+
+     return dest;
 }
